@@ -1,0 +1,69 @@
+ {% extends "AppGeneral/base.html" %}  
+ 
+ {% load static %}
+ 
+  {% block content %}
+  
+ <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppGeneral/img/principal.jfif' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <p class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            
+                <form action= "{% url 'reportesAdicionales' %}" method = "post"> 
+                    {% csrf_token %}
+                    <p style="text-align:center; text-color: red">
+                    <h2> Seleccione el reporte a generar </h2>
+                    
+                    <select name="reporte">
+                      <option value="1">Secuencias de dos números</option>
+                      <option value="2">Secuencias de tres números</option>
+                      <option value="3">Secuencias de cuatro números</option>
+                      <option value="4">Secuencias de cinco números</option>
+                      <option value="5">Secuencias de seis número</option>
+                      <option value="6">Secuencias de dos números,los sábados</option>
+                      <option value="7">Secuencias de tres números,los sábados</option>
+                      <option value="8"">Secuencias de cuatro números,los sábados</option>
+                      <option value="9">Secuencias de cinco números,los sábados</option>
+                      <option value="10">Secuencias de seis número, los sábados</option>
+                      <option value="11">Secuencias de dos números,los miércoles</option>
+                      <option value="12">Secuencias de tres números,los miércoles</option>
+                      <option value="13">Secuencias de cuatro números,los miércoless</option>
+                      <option value="14">Secuencias de cinco números,los miércoles</option>
+                      <option value="15">Secuencias de seis número, miércoles</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                    </p>
+                </form>
+         
+         
+         
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded" style="background: #8A2BE2;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Aquí podrás encontrar los números y sus frecuencias de aparición. Esas frecuencias dan una idea de la dificultad para ganar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock%}
+   

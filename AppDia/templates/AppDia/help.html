@@ -1,0 +1,64 @@
+ {% extends "AppGeneral/base_1.html" %}  
+ 
+ {% load static %}
+ 
+  {% block content %}
+  
+ <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppGeneral/img/principal.jfif' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <p class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+              <h2 class="mb-3">HELP </h2>
+              <p style="text-align:left; font-size: 18">
+                  <ul style="text-align:justify; margin:0 auto; padding:0;">
+                  <li>HOME: es simplemente la página de presentación o portada de la Aplicación web.</li>
+                  <li>ABOUT: Es la página donde se describe, de manera general, qué hace la aplicación.</li> 
+                  <li>DOWNLOAD: Es un botón de descarga, desde donde se descargan los datos del LottoTexas desde 1992 hasta la fecha actual.</li>
+                  <li>TODAY: Es una página desde donde se puede obtener, por día y mes, en forma resumida la información de los 6 números
+                  que mas han salido en los distintos eventos. Se muestran esos datos en un archivo PDF.</li>
+                  <li>NUMBERS/OCURRENCY: Es un botón que permite calcular la frecuencia de ocurrencia de los 54 números del LottoTexas en los últimos 28 años. 
+                  Esos datos quedan disponibles en un archivo CSV que se descarga automáticamente al terminar el cálculo</li>
+                  <li>DAY: Es una página que permite calcular la frecuencia de ocurrencia de los 54 números del LottoTexas
+                  en los últimos 28 años, para los miércoles o para los sábados. Esos datos quedan disponibles en un archivo
+                  CSV que se descarga automáticamente al terminar el cálculo</li>  
+                  <li>MONTH: El mismo cálculo que los dos items anteriores, pero para un mes en particular o para todos los meses.
+                  En el caso de un mes, se descarga el archivo CSV automáticamente. En el caso de todos los meses, su cálculo queda disponible, en archivos CSV,
+                  para su uso posterior.</li>
+                  <li>DAY/MONTH: El mismo cálculo que los tres items anteriores, pero para un día particular y un mes en particular.
+                  Se descarga el archivo CSV, con los datos, automáticamente.</li>
+                  <li>MORE...: Permite mostrar archivos pdfs con la frecuencia de aparición de distintas secuencias de números, en los últimos 30 años.
+                  El cálculo de estos datos se realiza offline debido a la cantidad de recursos computacionales que requieren. </li>  
+                  <li>CONTACT: Es una página que le permite a los usuarios comunicarse con nosotros. A quienes se responderá vía email.</li>  
+                  <ul>
+              </p>
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message 
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded" style="background: #8A2BE2;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Aquí podrás encontrar los números y sus frecuencias de aparición. Esas frecuencias dan una idea de la dificultad para ganar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+  {% endblock%}
+   

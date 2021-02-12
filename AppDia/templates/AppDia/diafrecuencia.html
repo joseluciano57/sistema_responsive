@@ -1,0 +1,56 @@
+ {% extends "AppGeneral/base.html" %}  
+ 
+ {% load static %}
+ 
+  {% block content %}
+  
+ <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppGeneral/img/principal.jfif' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <p class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            
+                <form action= "{% url 'receptorDia' %}" method = "post"> 
+                    {% csrf_token %}
+                    <p style="text-align:center; text-color: red">
+                    <h2> Seleccione el Día </h2>
+                    
+                    <select name="dia">
+                      <option value="Miércoles">Miércoles</option>
+                      <option value="Sábado">Sábado</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                    </p>
+                </form>
+         
+         
+         
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded" style="background: #8A2BE2;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Aquí podrás encontrar los números y sus frecuencias de aparición. Esas frecuencias dan una idea de la dificultad para ganar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock%}
+   

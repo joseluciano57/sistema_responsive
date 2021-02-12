@@ -1,0 +1,66 @@
+ {% extends "AppGeneral/base.html" %}  
+ 
+ {% load static %}
+ 
+  {% block content %}
+  
+ <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppGeneral/img/principal.jfif' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <p class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            
+                <form action= "{% url 'receptorMes' %}" method = "post"> 
+                    {% csrf_token %}
+                    <p style="text-align:center; text-color: red">
+                    <h2> Obtener datos de: </h2>
+                    
+                    <select name="mes">
+                      <option value="1">Enero</option>
+                      <option value="2">Febrero</option>
+                      <option value="3">Marzo</option>
+                      <option value="4">Abril</option>
+                      <option value="5">Mayo</option>
+                      <option value="6">Junio</option>
+                      <option value="7">Julio</option>
+                      <option value="8">Agosto</option>
+                      <option value="9">Septiembre</option>
+                      <option value="10">Octubre</option>
+                      <option value="11">Noviembre</option>
+                      <option value="12">Diciembre</option>
+                    </select>
+                    <input type="submit" value="Enviar">
+                    </p>
+                </form>
+         
+         
+         
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded" style="background: #8A2BE2;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Aquí podrás encontrar los números y sus frecuencias de aparición. Esas frecuencias dan una idea de la dificultad para ganar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock%}
+   
